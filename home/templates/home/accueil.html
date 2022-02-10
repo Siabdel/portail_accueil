@@ -1,0 +1,70 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+<!-- Project One -->
+<div class="row">
+    <div class="col-md-12">
+        <a href="#">
+            <!-- Display the image scaled to a width of 400 pixels: -->
+
+            {% image self.banner_image width-800 as tmp_photo %}
+
+            <img src="{{ tmp_photo.url }}" width="{{ tmp_photo.width }}"
+                height="{{ tmp_photo.height }}" alt="{{ tmp_photo.alt }}" 
+                class="img-arrondi" />
+        </a>
+    </div>
+    <div class="col-md-10">
+        <h3> {{ self.banner_title }} </h3>   
+
+        {% block body_class %}
+        {% endblock %}
+
+        <h4> {{ self.banner_subtitle | richtext }} </h4>   
+        <p>
+            {{ self.banner_body | richtext }}
+        </p>
+        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="col-md-2">
+        <ul>
+            <li> 
+            <a href=""> Bootstrap template </a>
+            </li>
+            <li> portefolio  </li>
+            <li> Bootstrap template </li>
+        </ul>
+    </div>
+</div>
+
+<!-- /.row -->
+<!-- Pagination -->
+    <div class="row text-center">
+        <div class="col-lg-12">
+            <ul class="pagination">
+                <li>
+                    <a href="#">&laquo;</a>
+                </li>
+                <li class="active">
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.row -->
+
+<hr>
