@@ -1,4 +1,6 @@
 {% load static wagtailcore_tags wagtailuserbar %}
+{% load menu_tags %}
+{% get_menu "main-menu" as menu %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -53,7 +55,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">Portail d'accueil Atlass</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,6 +69,16 @@
                 <li>
                     <a href="#">Contact</a>
                 </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="/">Home</a>
+                </li>
+                {% for item in menu.menu_items.all %}
+                    <li>
+                        <a class="page-scroll" href="{{ item.link_url }}">{{ item.link_title }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
