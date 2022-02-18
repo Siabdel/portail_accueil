@@ -60,15 +60,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -76,7 +67,8 @@
                 </li>
                 {% for item in menu.menu_items.all %}
                     <li>
-                        <a class="page-scroll" href="{{ item.link_url }}">{{ item.link_title }}</a>
+                        <a href="{{ item.link }}" {% if item.open_in_new_tab %} 
+                        target="_blank"{% endif %}> {{ item.title }}</a>
                     </li>
                 {% endfor %}
             </ul>

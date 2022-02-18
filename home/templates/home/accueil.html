@@ -5,8 +5,9 @@
     <div class="col-md-12">
         <a href="#">
             <!-- Display the image scaled to a width of 400 pixels: -->
-
-            {% image self.banner_image width-800 as tmp_photo %}
+	    <picture> 
+            	{% image self.banner_image width-800 as tmp_photo %}
+	    </picture>
 
             <img src="{{ tmp_photo.url }}" width="{{ tmp_photo.width }}"
                 height="{{ tmp_photo.height }}" alt="{{ tmp_photo.alt }}" 

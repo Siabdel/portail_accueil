@@ -25,8 +25,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 INSTALLED_APPS = [
     'home',
-    'search',
-    'menu',
+    
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -49,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'search',
+    'menu',
 ]
 
 MIDDLEWARE = [
@@ -163,6 +164,7 @@ WAGTAIL_SITE_NAME = "sitedemo"
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.search.backends.database',
+        'AUTO_UPDATE': False,
     }
 }
 
